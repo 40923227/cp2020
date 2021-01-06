@@ -133,12 +133,236 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Heat Sources(熱源) << <a href='Heat Sources(熱源).html'>Previous</a> <a href='BIOS Settings(bios設置).html'>Next</a> >> BIOS Settings(bios設置)<br /><h1>heat reduction</h1>
-<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW">There are many ways to reduce the amount of heat generated in a computer,<br/>but the most notable way is the use of a heat sink, like the one pictured<br/>below in green. A heat sink works to draw heat away from the sensitive<br/>components, such as the CPU, GPU, northbridge, and southbridge, through<br/>conduction. It then uses the fins to dissipate heat across a wider surface<br/>area. A fan usually moves air over the surface to remove the heat from the<br/>heat sink and push it out the computer’s exhaust vents on the back of the<br/>system. Heat sinks are created out of aluminum alloys or copper, which are<br/>soft metals with high heat conductivity.<br/></span></p>
-<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><span style="color: #99cc00;">有許多方法可以減少計算機中產生的熱量，但是最值得注意的方法是使用散熱器，如下面的綠色</span><br/><span style="color: #99cc00;">圖片所示。散熱器通過傳導將熱量從敏感組件（例如CPU，GPU，北橋和南橋）吸走。然後，它使</span><br/><span style="color: #99cc00;">用散熱片在更寬的表面積上散熱。風扇通常將空氣移動到表面上方，以從散熱器中散熱，然後將其</span><br/><span style="color: #99cc00;">從系統背面的計算機排氣孔中推出。散熱器由鋁合金或銅製成，而鋁合金或銅是具有高導熱性的軟金屬。</span><br/><img alt="Photograph of a heat sink. It is a square metal device with a round device with fins sitting on top. The round device is labeled “CPU Cooler.”" class="popimg" id="_i_0" onclick="loadImageFromPage(this);" src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH08/webcontent/PCH08/image1.png" title="Photograph of a heat sink. It is a square metal device with a round device with fins sitting on top. The round device is labeled “CPU Cooler.”"/></span></p>
+    <div id="tipue_search_content">Max Of Three << <a href='Max Of Three.html'>Previous</a> <br /><h1>Tic Tac Toe Game</h1>
+<h4 id="sample-solution">Sample solution</h4>
+<p>This exercise is unique because it relies on the output of the other exercises that need to be put together to make the final solution. The goal is to get practice with functions and how they work together in larger programs.</p>
+<p><span>該練習是獨特的，因為它依賴於需要匯總以得出最終解決方案的其他練習的輸出。目的是練習功能以及它們如何在較大的程序中協同工作。</span></p>
+<p>The 3 exercises above suggest breaking your Tic Tac Toe game into (at least) 4 functions:</p>
+<ol>
+<li>A function for drawing the game board (and the location of pieces)</li>
+<li>A function for checking whether there is a winner in the game</li>
+<li>A function for adding user input into the game state</li>
+<li>A main function that calls the others and plays the game</li>
+</ol>
+<p>The way to solve this problem is to look back at all 3 solutions to the previous exercises, copy them into one file, and modify what you had before. This is a different way of coding than coding an entire program from scratch, and can often save a lot of time.</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">解決此問題的方法是回顧一下先前練習的所有3個解決方案，將它們複製到一個文件中，<br/>然後修改之前的內容。與從頭開始編寫整個程序相比，這是一種不同的編碼方式，通常<br/>可以節省大量時間。</span></pre>
+<p>For my solution, I decided to copy all the functions from the older exercises into one file, and work from the main game logic from<span> </span><a href="https://www.practicepython.org/exercise/2015/11/26/27-tic-tac-toe-draw.html">Part 3</a>. Part 3 almost made you write the entire game - the main loop asking users for positions and input is already there, so starting from that point and modifying will let you finish this exercise in 30 minutes!</p>
+<p>Here is what my code looks like after copying in my solutions to<span> </span><a href="https://www.practicepython.org/exercise/2014/12/27/24-draw-a-game-board.html">Part 1</a>,<span> </span><a href="https://www.practicepython.org/exercise/2015/11/16/26-check-tic-tac-toe.html">Part 2</a>, and<span> </span><a href="https://www.practicepython.org/exercise/2015/11/26/27-tic-tac-toe-draw.html">Part 3</a><span> </span>of this exercise:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def draw_line(width, edge, filling):
+	print(filling.join([edge] * (width + 1)))
+
+def draw_board(width, height):
+	draw_line(width, " ", "__")
+	for i in range(height):
+		draw_line(width, "|", "__")
+	print("\n")
+
+def display_winner(player):
+	if player == 0:
+		print("Tie")
+	else:
+		print("Player " + str(player) + " wins!")
+
+def check_row_winner(row):
+	"""
+	Return the player number that wins for that row.
+	If there is no winner, return 0.
+	"""
+	if row[0] == row[1] and row[1] == row[2]:
+		return row[0]
+	return 0
+
+def get_col(game, col_number):
+	return [game[x][col_number] for x in range(3)]
+
+def get_row(game, row_number):
+	return game[row_number]
+
+def check_winner(game):
+	game_slices = []
+	for index in range(3):
+		game_slices.append(get_row(game, index))
+		game_slices.append(get_col(game, index))
+
+	# check diagonals
+	down_diagonal = [game[x][x] for x in range(3)]
+	up_diagonal = [game[0][2], game[1][1], game[2][0]]
+	game_slices.append(down_diagonal)
+	game_slices.append(up_diagonal)
+
+	for game_slice in game_slices:
+		winner = check_row_winner(game_slice)
+		if winner != 0:
+			display_winner(winner)
+			return winner
+
+	display_winner(winner)
+	return winner
+
+def start_game():
+	return [[0, 0, 0] for x in range(3)]
+
+def display_game(game):
+	d = {2: "O", 1: "X", 0: " "}
+	game_string = []
+	for row_num in range(3):
+		new_row = []
+		for col_num in range(3):
+			new_row.append(d[game[row_num][col_num]])
+		game_string.append(new_row)
+	print(game_string)
+
+
+def add_piece(game, player, row, column):
+	"""
+	game: game state
+	player: player number
+	row: 0-index row
+	column: 0-index column
+	"""
+	game[row][column] = player
+	return game
+
+def convert_input_to_coordinate(user_input):
+	return user_input - 1
+
+def switch_player(player):
+	if player == 1:
+		return 2
+	else:
+		return 1
+
+
+if __name__ == '__main__':
+	game = start_game()
+	display_game(game)
+	player = 1
+
+	# go on forever
+	while True:
+		print("Currently player: " + str(player))
+		row = convert_input_to_coordinate(int(input("Which row? (start with 1) ")))
+		column = convert_input_to_coordinate(int(input("Which column? (start with 1) ")))
+		game = add_piece(game, player, row, column)
+		display_game(game)
+		player = switch_player(player)</pre>
+<p>After some modifications:</p>
+<ul>
+<li>to the game board drawing functions</li>
+<li>adding a function to check the availability of a square</li>
+<li>adding a function to check whether there are any moves available</li>
+<li>updating the main game loop end condition</li>
+</ul>
+<p>The final product is here:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def draw_line(width, edge, filling):
+	print(filling.join([edge] * (width + 1)))
+
+
+def display_winner(player):
+	if player == 0:
+		print("Tie")
+	else:
+		print("Player " + str(player) + " wins!")
+
+def check_row_winner(row):
+	"""
+	Return the player number that wins for that row.
+	If there is no winner, return 0.
+	"""
+	if row[0] == row[1] and row[1] == row[2]:
+		return row[0]
+	return 0
+
+def get_col(game, col_number):
+	return [game[x][col_number] for x in range(3)]
+
+def get_row(game, row_number):
+	return game[row_number]
+
+def check_winner(game):
+	game_slices = []
+	for index in range(3):
+		game_slices.append(get_row(game, index))
+		game_slices.append(get_col(game, index))
+
+	# check diagonals
+	down_diagonal = [game[x][x] for x in range(3)]
+	up_diagonal = [game[0][2], game[1][1], game[2][0]]
+	game_slices.append(down_diagonal)
+	game_slices.append(up_diagonal)
+
+	for game_slice in game_slices:
+		winner = check_row_winner(game_slice)
+		if winner != 0:
+			return winner
+
+	return winner
+
+def start_game():
+	return [[0, 0, 0] for x in range(3)]
+
+def display_game(game):
+	d = {2: "O", 1: "X", 0: "_"}
+	draw_line(3, " ", "_")
+	for row_num in range(3):
+		new_row = []
+		for col_num in range(3):
+			new_row.append(d[game[row_num][col_num]])
+		print("|" + "|".join(new_row) + "|")
+
+
+def add_piece(game, player, row, column):
+	"""
+	game: game state
+	player: player number
+	row: 0-index row
+	column: 0-index column
+	"""
+	game[row][column] = player
+	return game
+
+def check_space_empty(game, row, column):
+	return game[row][column] == 0
+
+def convert_input_to_coordinate(user_input):
+	return user_input - 1
+
+def switch_player(player):
+	if player == 1:
+		return 2
+	else:
+		return 1
+
+def moves_exist(game):
+	for row_num in range(3):
+		for col_num in range(3):
+			if game[row_num][col_num] == 0:
+				return True
+	return False
+
+if __name__ == '__main__':
+	game = start_game()
+	display_game(game)
+	player = 1
+	winner = 0  # the winner is not yet defined
+
+	# go on forever
+	while winner == 0 and moves_exist(game):
+		print("Currently player: " + str(player))
+		available = False
+		while not available:
+			row = convert_input_to_coordinate(int(input("Which row? (start with 1) ")))
+			column = convert_input_to_coordinate(int(input("Which column? (start with 1) ")))
+			available = check_space_empty(game, row, column)
+		game = add_piece(game, player, row, column)
+		display_game(game)
+		player = switch_player(player)
+		winner = check_winner(game)
+	display_winner(winner)</pre>
+<p></p>
+</figure>
 </li>
-<li lang="">
-<br />Heat Sources(熱源) << <a href='Heat Sources(熱源).html'>Previous</a> <a href='BIOS Settings(bios設置).html'>Next</a> >> BIOS Settings(bios設置)</div>
+</ul><br />Max Of Three << <a href='Max Of Three.html'>Previous</a> </div>
         
     <!-- footer -->
       <div class="container">

@@ -133,12 +133,51 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Heat Sources(熱源) << <a href='Heat Sources(熱源).html'>Previous</a> <a href='BIOS Settings(bios設置).html'>Next</a> >> BIOS Settings(bios設置)<br /><h1>heat reduction</h1>
-<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW">There are many ways to reduce the amount of heat generated in a computer,<br/>but the most notable way is the use of a heat sink, like the one pictured<br/>below in green. A heat sink works to draw heat away from the sensitive<br/>components, such as the CPU, GPU, northbridge, and southbridge, through<br/>conduction. It then uses the fins to dissipate heat across a wider surface<br/>area. A fan usually moves air over the surface to remove the heat from the<br/>heat sink and push it out the computer’s exhaust vents on the back of the<br/>system. Heat sinks are created out of aluminum alloys or copper, which are<br/>soft metals with high heat conductivity.<br/></span></p>
-<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><span style="color: #99cc00;">有許多方法可以減少計算機中產生的熱量，但是最值得注意的方法是使用散熱器，如下面的綠色</span><br/><span style="color: #99cc00;">圖片所示。散熱器通過傳導將熱量從敏感組件（例如CPU，GPU，北橋和南橋）吸走。然後，它使</span><br/><span style="color: #99cc00;">用散熱片在更寬的表面積上散熱。風扇通常將空氣移動到表面上方，以從散熱器中散熱，然後將其</span><br/><span style="color: #99cc00;">從系統背面的計算機排氣孔中推出。散熱器由鋁合金或銅製成，而鋁合金或銅是具有高導熱性的軟金屬。</span><br/><img alt="Photograph of a heat sink. It is a square metal device with a round device with fins sitting on top. The round device is labeled “CPU Cooler.”" class="popimg" id="_i_0" onclick="loadImageFromPage(this);" src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH08/webcontent/PCH08/image1.png" title="Photograph of a heat sink. It is a square metal device with a round device with fins sitting on top. The round device is labeled “CPU Cooler.”"/></span></p>
-</li>
-<li lang="">
-<br />Heat Sources(熱源) << <a href='Heat Sources(熱源).html'>Previous</a> <a href='BIOS Settings(bios設置).html'>Next</a> >> BIOS Settings(bios設置)</div>
+    <div id="tipue_search_content">Check Tic Tac Toe << <a href='Check Tic Tac Toe.html'>Previous</a> <a href='Tic Tac Toe Game.html'>Next</a> >> Tic Tac Toe Game<br /><h1>Max Of Three</h1>
+<p>Implement a function that takes as input three variables, and returns the largest of the three. Do this without using the Python<span> </span><code class="highlighter-rouge">max()</code><span> </span>function!</p>
+<p>The goal of this exercise is to think about some internals that Python normally takes care of for us. All you need is some variables and<span> </span><code class="highlighter-rouge">if</code><span> </span>statements!</p>
+<h4><span>Max Of Three Solutions</span></h4>
+<h4 id="sample-solutions">Sample solutions</h4>
+<p>There are many ways to answer this question, ranging from simple to complex. Here are a few reader-submitted answers!</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">有許多方法可以回答此問題，從簡單到復雜。這是讀者提交的一些答案！</span></pre>
+<p>This first example solution uses a series of<span> </span><code class="highlighter-rouge">if</code><span> </span>statements and comparisons to find the largest of 3 elements.</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def max_of_three(a,b,c):
+     max_3=0
+     if a&gt;b:
+         #max_3=a
+         if a&gt;c:
+             max_3=c
+         else:
+             max_3=a
+     else:
+          if b&gt;c:
+             max_3=b
+          else:
+             max_3=c
+     return max_3</pre>
+<p><span>Another solution is a little bit less verbose, taking 3 numbers as an input, making them into a list, sorting them, and then reading off the largest element.</span></p>
+<p><span lang="zh-TW">另一個解決方案是稍微冗長一些，將3個數字作為輸入，將它們放入列表，對它們進行排序，然後讀取最大的元素。</span></p>
+<p><span lang="zh-TW"><span>This last solution uses a more compact series of </span><code class="highlighter-rouge">if</code><span><span> </span>statement comparisons to cover all cases of 3 elements.</span></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#!/usr/bin/env python
+import sys
+
+if len(sys.argv) &lt; 4:
+    print 'Usage &lt;value1&gt; &lt;value2&gt; &lt;value3&gt;'
+    sys.exit ( 1 )
+    
+arg1 = sys.argv[1]
+arg2 = sys.argv[2]
+arg3 = sys.argv[3]
+def maxfunction(a,b,c):
+	if (a &gt; b) and (a &gt; c):
+	    print 'Max value is :',a
+        elif (b &gt; a) and (b &gt; c):
+            print 'Max value is :',b
+        elif (c &gt; a) and (c &gt; b):
+            print 'Max value is :',c
+            
+maxfunction(arg1,arg2,arg3)</pre>
+<br />Check Tic Tac Toe << <a href='Check Tic Tac Toe.html'>Previous</a> <a href='Tic Tac Toe Game.html'>Next</a> >> Tic Tac Toe Game</div>
         
     <!-- footer -->
       <div class="container">

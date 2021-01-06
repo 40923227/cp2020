@@ -9,8 +9,7 @@
 <p>動態內容編輯完成後, 以 generate_pages 轉為靜態內容, 以 git add commit 及 push 將內容推到遠端.</p>
 <p>4. 之後若要以 git clone 取下包含 submodule 的所有內容, 執行:</p>
 <p>git clone --recurse-submodules <a href="https://github.com/mdecourse/newcms.git">https://github.com/mdecourse/newcms.git</a></p>
-<h2><span>Humans have limits</span></h2>
-<p><span><img data-src="https://i1.kknews.cc/SIG=1bdd0kd/ctp-vzntr/9n46r2o1q45741qs9p54so7786q12768.jpg" height="350" src="https://i1.kknews.cc/SIG=1bdd0kd/ctp-vzntr/9n46r2o1q45741qs9p54so7786q12768.jpg" width="640"/><br/><br/><span>原文網址：</span><a href="https://kknews.cc/comic/qglljno.html">https://kknews.cc/comic/qglljno.html</a></span></p>
+<p><span></span></p>
 <h2>Develop</h2>
 <p><a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 的開發, 可以在一個目錄中放入 cmsimde, 然後將 up_dir 中的內容放到與 cmsimde 目錄同位階的地方, 使用 command 進入 cmsimde 目錄, 執行 python wsgi.py, 就可以啟動, 以瀏覽器 https://localhost:9443 就可以連接, 以 admin 作為管理者密碼, 就可以登入維護內容.</p>
 <p>cmsimde 的開發採用 Leo Editor, 開啟 cmsimde 目錄中的 cmsimde.leo 就可以進行程式修改, 結束後, 若要保留網際內容, 只要將 cmsimde 外部的內容倒回 up_dir 目錄中即可後續對 cmsimde 遠端倉儲進行改版.</p>
@@ -142,5 +141,381 @@ PCIe版本4 2 Gbps</span></pre>
 <p style="text-align: left;"><span lang="zh-TW"><span style="color: #99cc00;">大多數現代主板和BIOS支持對主板及其組件進行溫度監控。其名稱因製造商而異，但通常稱為PC運行狀況或溫度監控。對於支持超頻的主板，您可以在BIOS中配置設置以增加或減少處理能力，從而防止產生更多的熱量。 CPU具有監視其溫度的傳感器，BIOS可以增加或減小風扇速度以控制CPU的溫度。但是請記住，通過減少功耗（並因此減少熱量），您同時也在降低CPU的性能。</span><img alt="Photograph of a BIOS screen that provides a graph of system temperature and actual temperature measurements within the CPU and memory, along with ambient temperature. It also charts fan speeds (via tachometer readings) in the CPU, memory, chassis, chipset, and PCI." class="popimg" id="_i_0" onclick="loadImageFromPage(this);" src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH08/webcontent/PCH08/image2.png" title="Photograph of a BIOS screen that provides a graph of system temperature and actual temperature measurements within the CPU and memory, along with ambient temperature. It also charts fan speeds (via tachometer readings) in the CPU, memory, chassis, chipset, and PCI."/></span></p>
 <h2>HW2</h2>
 </li>
-<li lang=""><a href="https://www.kaggle.com/yuyang0402/cp2020-hw2">https://www.kaggle.com/yuyang0402/cp2020-hw2</a></li>
+<li lang="">
+<h3>變數 Variables</h3>
+</li>
+<li lang=""><span>Variables, expressions, and statements,Values and types</span>
+<p><br/>變量，表達式和語句，值和類型</p>
+<p>A<span> </span><em>value</em><span> </span>is one of the basic things a program works with, like a letter or a number. The values we have seen so far are<span> </span><code>1</code>,<span> </span><code>2</code>, and "Hello, World!"</p>
+<p>值是程序使用的基本內容之一，例如字母或數字。到目前為止，我們看到的值為1、2和“ Hello，World！”。</p>
+<p>These values belong to different<span> </span><em>types</em>:<span> </span><code>2</code><span> </span>is an integer, and "Hello, World!" is a<span> </span><em>string</em>, so called because it contains a "string" of letters. You (and the interpreter) can identify strings because they are enclosed in quotation marks.</p>
+<p>這些值屬於不同的類型：2是整數，“ Hello，World！”是字符串，之所以稱為字符串是因為它包含字母的“字符串”。您（和解釋器）可以識別字符串，因為它們用引號引起來。</p>
+<p>The<span> </span><code>print</code><span> </span>statement also works for integers. We use the<span> </span><code>python</code><span> </span>command to start the interpreter.</p>
+<p>print語句也適用於整數。我們使用python命令啟動解釋器。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_958918">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py plain">python</code></div>
+<div class="line number2 index1 alt1"><code class="py plain">&gt;&gt;&gt; </code><code class="py functions">print</code><code class="py plain">(</code><code class="py value">4</code><code class="py plain">)</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><span>If you are not sure what type a value has, the interpreter can tell you.</span></p>
+<p><span>如果您不確定值的類型，解釋器可以告訴您。</span></p>
+<p><span>Not surprisingly, strings belong to the type <code>str</code><span><span> </span>and integers belong to the type<span> </span></span><code>int</code><span>. Less obviously, numbers with a decimal point belong to a type called<span> </span></span><code>float</code><span>, because these numbers are represented in a format called<span> </span></span><em>floating point</em></span></p>
+<p><span><em>毫不奇怪，字符串屬於str類型，而整數屬於int類型。不太明顯的是，帶小數點的數字屬於稱為浮點的類型，因為這些數字以稱為浮點的格式表示</em></span></p>
+<p>What about values like "17" and "3.2"? They look like numbers, but they are in quotation marks like strings.</p>
+<p>那麼“ 17”和“ 3.2”之類的值呢？它們看起來像數字，但用引號引起來，例如字符串。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_211233">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py plain">&gt;&gt;&gt; </code><code class="py functions">type</code><code class="py plain">(</code><code class="py string">'17'</code><code class="py plain">)</code></div>
+<div class="line number2 index1 alt1"><code class="py plain">&gt;&gt;&gt; </code><code class="py functions">type</code><code class="py plain">(</code><code class="py string">'3.2'</code><code class="py plain">)</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>They're strings.</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">他們是字符串。</span></pre>
+<p>When you type a large integer, you might be tempted to use commas between groups of three digits, as in<span> </span><code>1,000,000</code>. This is not a legal integer in Python, but it is legal:</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW">當您輸入一個大整數時，您可能會想在三位數的組之間使用逗號，例如1,000,000。在Python中這不是合法的整數，但它是合法的：<br/></span></pre>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_785352">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py plain">&gt;&gt;&gt; </code><code class="py functions">print</code><code class="py plain">(</code><code class="py value">1</code><code class="py plain">,</code><code class="py value">000</code><code class="py plain">,</code><code class="py value">000</code><code class="py plain">)</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><span>Well, that's not what we expected at all! Python interprets </span><code>1,000,000</code><span><span> </span>as a comma-separated sequence of integers, which it prints with spaces between.</span><br/>好吧，這根本不是我們所期望的！ Python將1,000,000解釋為以逗號分隔的整數序列，並在其之間打印出空格。<br/></span></pre>
+<p>This is the first example we have seen of a semantic error: the code runs without producing an error message, but it doesn't do the "right" thing.</p>
+<p>這是我們看到的第一個語義錯誤示例：代碼運行時未產生錯誤消息，但沒有做“正確的”事情。</p>
+<p>Variables 變數</p>
+<p><span>One of the most powerful features of a programming language is the ability to manipulate </span><em>variables</em><span>. A variable is a name that refers to a value.</span></p>
+<p><span>編程語言最強大的功能之一就是能夠操縱變量。變量是引用值的名稱。</span></p>
+<p><span>An <em>assignment statement</em><span><span> </span>creates new variables and gives them values:</span></span></p>
+<p><span><span>賦值語句創建新變量並為其提供值：</span></span></p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_827705">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py plain">&gt;&gt;&gt; message </code><code class="py keyword">=</code> <code class="py string">'And now for something completely different'</code></div>
+<div class="line number2 index1 alt1"><code class="py plain">&gt;&gt;&gt; n </code><code class="py keyword">=</code> <code class="py value">17</code></div>
+<div class="line number3 index2 alt2"><code class="py plain">&gt;&gt;&gt; pi </code><code class="py keyword">=</code> <code class="py value">3.1415926535897931</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><span>This example makes three assignments. The first assigns a string to a new variable named </span><code>message</code><span>; the second assigns the integer<span> </span></span><code>17</code><span><span> </span>to<span> </span></span><code>n</code><span>; the third assigns the (approximate) value of<span> </span></span><span class="math"><em>π</em></span><span><span> </span>to<span> </span></span><code>pi</code><span>.</span><br/>本示例進行了三個分配。第一個將字符串分配給一個名為message的新變量；第二個將整數17分配給n；第三個將π的（近似）值分配給pi。<br/><span>To display the value of a variable, you can use a print statement:</span><br/>要顯示變量的值，可以使用打印語句：<br/></span></pre>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_797861">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py plain">&gt;&gt;&gt; </code><code class="py functions">print</code><code class="py plain">(n)</code></div>
+<div class="line number2 index1 alt1"><code class="py value">17</code></div>
+<div class="line number3 index2 alt2"><code class="py plain">&gt;&gt;&gt; </code><code class="py functions">print</code><code class="py plain">(pi)</code></div>
+<div class="line number4 index3 alt1"><code class="py value">3.141592653589793</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The type of a variable is the type of the value it refers to.</p>
+<p>變量的類型是它所引用的值的類型。</p>
+<div>
+<div class="syntaxhighlighter html" id="highlighter_161499">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="html plain">&gt;&gt;&gt; type(message)</code></div>
+<div class="line number2 index1 alt1"><code class="html plain">&lt;</code><code class="html keyword">class</code> <code class="html plain">'str'&gt;</code></div>
+<div class="line number3 index2 alt2"><code class="html plain">&gt;&gt;&gt; type(n)</code></div>
+<div class="line number4 index3 alt1"><code class="html plain">&lt;</code><code class="html keyword">class</code> <code class="html plain">'int'&gt;</code></div>
+<div class="line number5 index4 alt2"><code class="html plain">&gt;&gt;&gt; type(pi)</code></div>
+<div class="line number6 index5 alt1"><code class="html plain">&lt;</code><code class="html keyword">class</code> <code class="html plain">'float'&gt;</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</li>
+<li lang="">
+<h3>HTML Tutorial HTML教程</h3>
+<p><strong>HTML Introduction HTML簡介</strong></p>
+<p><span>HTML is the standard markup language for creating Web pages.</span></p>
+<p>HTML是用於創建網頁的標準標記語言。</p>
+<p><strong>What is HTML? 什麼是HTML？</strong></p>
+<ul>
+<li>HTML stands for Hyper Text Markup Language</li>
+<li>HTML代表超文本標記語言</li>
+<li>HTML is the standard markup language for creating Web pages</li>
+<li>HTML是用於創建網頁的標準標記語言</li>
+<li>HTML describes the structure of a Web page</li>
+<li>HTML描述了網頁的結構</li>
+<li>HTML consists of a series of elements</li>
+<li>HTML由一系列元素組成</li>
+<li>HTML elements tell the browser how to display the content</li>
+<li>HTML元素告訴瀏覽器如何顯示內容</li>
+<li>HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.</li>
+<li>HTML元素標記內容的內容，例如“這是標題”，“這是段落”，“這是鏈接”等。</li>
+</ul>
+<p><strong>A Simple HTML Document 一個簡單的HTML文檔</strong></p>
+<p><strong>Example 範例<br/></strong></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Page Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+ 
+&lt;h1&gt;My First Heading&lt;/h1&gt;
+&lt;p&gt;My first paragraph.&lt;/p&gt;
+ 
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p><strong>Example Explained 示例說明</strong></p>
+<ul>
+<li>The<span> </span><code class="w3-codespan">&lt;!DOCTYPE html&gt;</code><span> </span>declaration defines that this document is an HTML5 document</li>
+<li>&lt;！DOCTYPE html&gt;聲明定義此文檔為HTML5文檔</li>
+<li>The<span> </span><code class="w3-codespan">&lt;html&gt;</code><span> </span>element is the root element of an HTML page</li>
+<li>&lt;html&gt;元素是HTML頁面的根元素</li>
+<li>The<span> </span><code class="w3-codespan">&lt;head&gt;</code><span> </span>element contains meta information about the HTML page</li>
+<li>&lt;head&gt;元素包含有關HTML頁面的元信息</li>
+<li>The<span> </span><code class="w3-codespan">&lt;title&gt;</code><span> </span>element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab)</li>
+<li>&lt;title&gt;元素指定HTML頁面的標題（顯示在瀏覽器的標題欄中或頁面的選項卡中）</li>
+<li>The<span> </span><code class="w3-codespan">&lt;body&gt;</code><span> </span>element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.</li>
+<li>&lt;body&gt;元素定義文檔的正文，並且是所有可見內容的容器，例如標題，段落，圖像，超鏈接，表格，列表等。</li>
+<li>The<span> </span><code class="w3-codespan">&lt;h1&gt;</code><span> </span>element defines a large heading</li>
+<li>&lt;h1&gt;元素定義一個大標題</li>
+<li>The<span> </span><code class="w3-codespan">&lt;p&gt;</code><span> </span>element defines a paragraph</li>
+<li>&lt;p&gt;元素定義一個段落</li>
+</ul>
+<p><strong>What is an HTML Element? 什麼是HTML元素？</strong></p>
+<p>An HTML element is defined by a start tag, some content, and an end tag:</p>
+<p>HTML元素由開始標籤，一些內容和結束標籤定義：</p>
+<div><span>&lt;tagname&gt;</span>Content goes here...<span>&lt;/tagname&gt;</span></div>
+<div>
+<p>The HTML<span> </span><strong>element</strong><span> </span>is everything from the start tag to the end tag:</p>
+<p>HTML元素包括從開始標記到結束標記的所有內容：</p>
+<div><span>&lt;h1&gt;</span>My First Heading<span>&lt;/h1&gt;</span></div>
+<div>
+<div><span>&lt;p&gt;</span>My first paragraph.<span>&lt;/p&gt;</span></div>
+<div><span><img alt="" height="150" src="https://40923221.github.io/cp2020/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202021-01-03%20200637.png" width="1270"/></span></div>
+<div>
+<div class="w3-panel w3-note">
+<p><strong>Note:</strong><span> </span>Some HTML elements have no content (like the &lt;br&gt; element). These elements are called empty elements. Empty elements do not have an end tag!</p>
+<p>注意：某些HTML元素沒有內容（例如&lt;br&gt;元素）。這些元素稱為空元素。空元素沒有結束標籤！</p>
+<p><strong>Web Browsers 網頁瀏覽器</strong></p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<p>The purpose of a web browser (Chrome, Edge, Firefox, Safari) is to read HTML documents and display them correctly.</p>
+<p>網絡瀏覽器（Chrome，Edge，Firefox，Safari）的目的是讀取HTML文檔並正確顯示它們。</p>
+<p>A browser does not display the HTML tags, but uses them to determine how to display the document:</p>
+<p>瀏覽器不顯示HTML標記，而是使用它們來確定如何顯示文檔：</p>
+<img alt="View in Browser" class="w3-image" src="https://www.w3schools.com/html/img_chrome.png"/></div>
+<div><strong>HTML Page Structure HTML頁面結構</strong></div>
+<div>
+<p>Below is a visualization of an HTML page structure:</p>
+<p>下面是HTML頁面結構的可視化：</p>
+<p><img alt="" height="517" src="https://40923221.github.io/cp2020/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202021-01-03%20200945.png" width="1253"/></p>
+<div class="w3-panel w3-note">
+<p><strong>Note:</strong><span> </span>The content inside the &lt;body&gt; section (the white area above) will be displayed in a browser. The content inside the &lt;title&gt; element will be shown in the browser's title bar or in the page's tab.</p>
+<p>注意：&lt;body&gt;部分（上面的白色區域）內的內容將在瀏覽器中顯示。 &lt;title&gt;元素內的內容將顯示在瀏覽器的標題欄中或頁面的選項卡中。</p>
+<p><strong>HTML History HTML歷史</strong></p>
+<p>Since the early days of the World Wide Web, there have been many versions of HTML:</p>
+<p>自萬維網問世以來，已經有許多版本的HTML：</p>
+<p><img alt="" height="540" src="https://40923221.github.io/cp2020/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202021-01-03%20201133.png" width="568"/></p>
+<div class="w3-panel w3-note">
+<p>This tutorial follows the latest HTML5 standard.</p>
+<p>本教程遵循最新的HTML5標準。</p>
+</div>
+</div>
+</div>
+</li>
+<li lang=""><a href="https://www.kaggle.com/yuyang0402/cp2020-hw2">https://www.kaggle.com/yuyang0402/cp2020-hw2</a>
+<h2>HW3</h2>
+<h3><span>Check Tic Tac Toe</span></h3>
+<p><em>This exercise is Part 2 of 4 of the Tic Tac Toe exercise series. The other exercises are:<span> </span><a href="https://www.practicepython.org/exercise/2014/12/27/24-draw-a-game-board.html">Part 1</a>,<span> </span><a href="https://www.practicepython.org/exercise/2015/11/26/27-tic-tac-toe-draw.html">Part 3</a>, and<span> </span><a href="https://www.practicepython.org/exercise/2016/08/03/29-tic-tac-toe-game.html">Part 4</a>.</em></p>
+<p>As you may have guessed, we are trying to build up to a full tic-tac-toe board. However, this is significantly more than half an hour of coding, so we’re doing it in pieces.</p>
+<span>您可能已經猜到了，我們正在努力建立完整的井字遊戲板。但是，這遠遠超過了半個小時的編碼，因此我們要分批進行。</span>
+<p></p>
+<p></p>
+<p>Today, we will simply focus on checking whether someone has WON a game of Tic Tac Toe, not worrying about how the moves were made.</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">我們只關注檢查某人是否贏得了井字遊戲，而不用擔心這些動作是如何進行的。</span></pre>
+<p></p>
+<p>If a game of Tic Tac Toe is represented as a list of lists, like so:</p>
+<figure class="highlight">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">game = [[1, 2, 0],
+	[2, 1, 0],
+	[2, 1, 1]]</pre>
+<pre><code class="language-python" data-lang="python"><span class="p"><br/><br/></span></code></pre>
+<p style="text-align: left;">where a<span> </span><code class="highlighter-rouge">0</code><span> </span>means an empty square, a<span> </span><code class="highlighter-rouge">1</code><span> </span>means that player 1 put their token in that space, and a<span> </span><code class="highlighter-rouge">2</code><span> </span>means that player 2 put their token in that space.</p>
+<p style="text-align: left;">Your task this week: given a 3 by 3 list of lists that represents a Tic Tac Toe game board, tell me whether anyone has won, and tell me which player won, if any. A Tic Tac Toe win is 3 in a row - either in a row, a column, or a diagonal. Don’t worry about the case where TWO people have won - assume that in every board there will only be one winner.</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">給定一個代表Tic Tac Toe遊戲板的3 x 3列表，請告訴我是否有人贏了，並告訴我哪<br/>個玩家贏了（如果有）。井字遊戲的勝利是連續3個-連續，一列或對角線。不必擔心會<br/>有兩個人獲勝的情況-假設在每個董事會中只有一個獲勝者。</span></pre>
+<p style="text-align: left;">Here are some more examples to work with:</p>
+<figure class="highlight" style="text-align: left;">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">winner_is_2 = [[2, 2, 0],
+	[2, 1, 0],
+	[2, 1, 1]]
+
+winner_is_1 = [[1, 2, 0],
+	[2, 1, 0],
+	[2, 1, 1]]
+
+winner_is_also_1 = [[0, 1, 0],
+	[2, 1, 0],
+	[2, 1, 1]]
+
+no_winner = [[1, 2, 0],
+	[2, 1, 0],
+	[2, 1, 2]]
+
+also_no_winner = [[1, 2, 0],
+	[2, 1, 0],
+	[2, 1, 0]]</pre>
+<pre><br/><br/></pre>
+</figure>
+<h4 id="topics">Topics</h4>
+<p>This exercise is challenging, but doable with only lists (of lists)! Lists of lists are nearly the same as lists, just a bit trickier. Remember that to get the first element in a list called<span> </span><code class="highlighter-rouge">my_list = [5, 10, 15]</code>, you index it with a variable like so:</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">僅可使用列表中的列表！列表的列表與列表幾乎相同，只是比較棘手。請記住，要獲取<br/>名為my_list = [5，10，15]的列表中的第一個元素，請使用如下所示的變量對其進<br/>行索引：</span></pre>
+<figure class="highlight">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; print(my_list[0])
+	5
+	&gt;&gt;&gt; print(my_list[-1])
+	15
+	&gt;&gt;&gt; print(len(my_list))
+	3</pre>
+</figure>
+<p>When working with lists of lists, it is the same! Say you have a list<span> </span><code class="highlighter-rouge">matrix = [[1, 2], [3, 4]]</code>. Then, take a look at this:</p>
+<figure class="highlight">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; print(matrix[0])
+	[1, 2]
+	&gt;&gt;&gt; print(matrix[-1])
+	[3, 4]
+	&gt;&gt;&gt; first_row = matrix[0]
+	&gt;&gt;&gt; print(first_row[0])
+	1
+	&gt;&gt;&gt; print(matrix[0][0])
+	1
+	&gt;&gt;&gt; print(matrix[1][1])
+	4</pre>
+</figure>
+<p>The cool part is that you can use double-indexing to read the elements from our list of lists<span> </span><code class="highlighter-rouge">matrix</code>! By indexing<span> </span><code class="highlighter-rouge">matrix[0][1]</code><span> </span>we are saying give me the 1st element of the 0th element of<span> </span><code class="highlighter-rouge">matrix</code>, which in this case is<span> </span><code class="highlighter-rouge">2</code>.<span lang="zh-TW">最酷的部分是您可以使用雙索引從列表列表矩陣中讀取元素！通過索引矩陣[0] [1]，我們要給我矩陣第0個元素的第一個元素，在這種情況下為2。</span></p>
+<h3><span lang="zh-TW"><span>Max Of Three</span></span></h3>
+<p>Implement a function that takes as input three variables, and returns the largest of the three. Do this without using the Python<span> </span><code class="highlighter-rouge">max()</code><span> </span>function!</p>
+<p>The goal of this exercise is to think about some internals that Python normally takes care of for us. All you need is some variables and<span> </span><code class="highlighter-rouge">if</code><span> </span>statements!</p>
+<h4><span>Max Of Three Solutions</span></h4>
+<h4 id="sample-solutions">Sample solutions</h4>
+<p>There are many ways to answer this question, ranging from simple to complex. Here are a few reader-submitted answers!</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">有許多方法可以回答此問題，從簡單到復雜。這是讀者提交的一些答案！</span></pre>
+<p>This first example solution uses a series of<span> </span><code class="highlighter-rouge">if</code><span> </span>statements and comparisons to find the largest of 3 elements.</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def max_of_three(a,b,c):
+     max_3=0
+     if a&gt;b:
+         #max_3=a
+         if a&gt;c:
+             max_3=c
+         else:
+             max_3=a
+     else:
+          if b&gt;c:
+             max_3=b
+          else:
+             max_3=c
+     return max_3</pre>
+<p><span>Another solution is a little bit less verbose, taking 3 numbers as an input, making them into a list, sorting them, and then reading off the largest element.</span></p>
+<p><span lang="zh-TW">另一個解決方案是稍微冗長一些，將3個數字作為輸入，將它們放入列表，對它們進行排序，然後讀取最大的元素。</span></p>
+<p><span lang="zh-TW"><span>This last solution uses a more compact series of </span><code class="highlighter-rouge">if</code><span><span> </span>statement comparisons to cover all cases of 3 elements.</span></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#!/usr/bin/env python
+import sys
+
+if len(sys.argv) &lt; 4:
+    print 'Usage &lt;value1&gt; &lt;value2&gt; &lt;value3&gt;'
+    sys.exit ( 1 )
+    
+arg1 = sys.argv[1]
+arg2 = sys.argv[2]
+arg3 = sys.argv[3]
+def maxfunction(a,b,c):
+	if (a &gt; b) and (a &gt; c):
+	    print 'Max value is :',a
+        elif (b &gt; a) and (b &gt; c):
+            print 'Max value is :',b
+        elif (c &gt; a) and (c &gt; b):
+            print 'Max value is :',c
+            
+maxfunction(arg1,arg2,arg3)</pre>
+<p></p>
+</figure>
+</li>
 </ul>

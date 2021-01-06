@@ -133,12 +133,172 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Heat Sources(熱源) << <a href='Heat Sources(熱源).html'>Previous</a> <a href='BIOS Settings(bios設置).html'>Next</a> >> BIOS Settings(bios設置)<br /><h1>heat reduction</h1>
-<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW">There are many ways to reduce the amount of heat generated in a computer,<br/>but the most notable way is the use of a heat sink, like the one pictured<br/>below in green. A heat sink works to draw heat away from the sensitive<br/>components, such as the CPU, GPU, northbridge, and southbridge, through<br/>conduction. It then uses the fins to dissipate heat across a wider surface<br/>area. A fan usually moves air over the surface to remove the heat from the<br/>heat sink and push it out the computer’s exhaust vents on the back of the<br/>system. Heat sinks are created out of aluminum alloys or copper, which are<br/>soft metals with high heat conductivity.<br/></span></p>
-<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><span style="color: #99cc00;">有許多方法可以減少計算機中產生的熱量，但是最值得注意的方法是使用散熱器，如下面的綠色</span><br/><span style="color: #99cc00;">圖片所示。散熱器通過傳導將熱量從敏感組件（例如CPU，GPU，北橋和南橋）吸走。然後，它使</span><br/><span style="color: #99cc00;">用散熱片在更寬的表面積上散熱。風扇通常將空氣移動到表面上方，以從散熱器中散熱，然後將其</span><br/><span style="color: #99cc00;">從系統背面的計算機排氣孔中推出。散熱器由鋁合金或銅製成，而鋁合金或銅是具有高導熱性的軟金屬。</span><br/><img alt="Photograph of a heat sink. It is a square metal device with a round device with fins sitting on top. The round device is labeled “CPU Cooler.”" class="popimg" id="_i_0" onclick="loadImageFromPage(this);" src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH08/webcontent/PCH08/image1.png" title="Photograph of a heat sink. It is a square metal device with a round device with fins sitting on top. The round device is labeled “CPU Cooler.”"/></span></p>
+    <div id="tipue_search_content">HW2 << <a href='HW2.html'>Previous</a> <a href='HTML Tutorial HTML教程.html'>Next</a> >> HTML Tutorial HTML教程<br /><h1>變數 Variables</h1>
+</li>
+<li lang=""><span>Variables, expressions, and statements,Values and types</span>
+<p><br/>變量，表達式和語句，值和類型</p>
+<p>A<span> </span><em>value</em><span> </span>is one of the basic things a program works with, like a letter or a number. The values we have seen so far are<span> </span><code>1</code>,<span> </span><code>2</code>, and "Hello, World!"</p>
+<p>值是程序使用的基本內容之一，例如字母或數字。到目前為止，我們看到的值為1、2和“ Hello，World！”。</p>
+<p>These values belong to different<span> </span><em>types</em>:<span> </span><code>2</code><span> </span>is an integer, and "Hello, World!" is a<span> </span><em>string</em>, so called because it contains a "string" of letters. You (and the interpreter) can identify strings because they are enclosed in quotation marks.</p>
+<p>這些值屬於不同的類型：2是整數，“ Hello，World！”是字符串，之所以稱為字符串是因為它包含字母的“字符串”。您（和解釋器）可以識別字符串，因為它們用引號引起來。</p>
+<p>The<span> </span><code>print</code><span> </span>statement also works for integers. We use the<span> </span><code>python</code><span> </span>command to start the interpreter.</p>
+<p>print語句也適用於整數。我們使用python命令啟動解釋器。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_958918">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py plain">python</code></div>
+<div class="line number2 index1 alt1"><code class="py plain">&gt;&gt;&gt; </code><code class="py functions">print</code><code class="py plain">(</code><code class="py value">4</code><code class="py plain">)</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><span>If you are not sure what type a value has, the interpreter can tell you.</span></p>
+<p><span>如果您不確定值的類型，解釋器可以告訴您。</span></p>
+<p><span>Not surprisingly, strings belong to the type <code>str</code><span><span> </span>and integers belong to the type<span> </span></span><code>int</code><span>. Less obviously, numbers with a decimal point belong to a type called<span> </span></span><code>float</code><span>, because these numbers are represented in a format called<span> </span></span><em>floating point</em></span></p>
+<p><span><em>毫不奇怪，字符串屬於str類型，而整數屬於int類型。不太明顯的是，帶小數點的數字屬於稱為浮點的類型，因為這些數字以稱為浮點的格式表示</em></span></p>
+<p>What about values like "17" and "3.2"? They look like numbers, but they are in quotation marks like strings.</p>
+<p>那麼“ 17”和“ 3.2”之類的值呢？它們看起來像數字，但用引號引起來，例如字符串。</p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_211233">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py plain">&gt;&gt;&gt; </code><code class="py functions">type</code><code class="py plain">(</code><code class="py string">'17'</code><code class="py plain">)</code></div>
+<div class="line number2 index1 alt1"><code class="py plain">&gt;&gt;&gt; </code><code class="py functions">type</code><code class="py plain">(</code><code class="py string">'3.2'</code><code class="py plain">)</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>They're strings.</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">他們是字符串。</span></pre>
+<p>When you type a large integer, you might be tempted to use commas between groups of three digits, as in<span> </span><code>1,000,000</code>. This is not a legal integer in Python, but it is legal:</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW">當您輸入一個大整數時，您可能會想在三位數的組之間使用逗號，例如1,000,000。在Python中這不是合法的整數，但它是合法的：<br/></span></pre>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_785352">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py plain">&gt;&gt;&gt; </code><code class="py functions">print</code><code class="py plain">(</code><code class="py value">1</code><code class="py plain">,</code><code class="py value">000</code><code class="py plain">,</code><code class="py value">000</code><code class="py plain">)</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><span>Well, that's not what we expected at all! Python interprets </span><code>1,000,000</code><span><span> </span>as a comma-separated sequence of integers, which it prints with spaces between.</span><br/>好吧，這根本不是我們所期望的！ Python將1,000,000解釋為以逗號分隔的整數序列，並在其之間打印出空格。<br/></span></pre>
+<p>This is the first example we have seen of a semantic error: the code runs without producing an error message, but it doesn't do the "right" thing.</p>
+<p>這是我們看到的第一個語義錯誤示例：代碼運行時未產生錯誤消息，但沒有做“正確的”事情。</p>
+<p>Variables 變數</p>
+<p><span>One of the most powerful features of a programming language is the ability to manipulate </span><em>variables</em><span>. A variable is a name that refers to a value.</span></p>
+<p><span>編程語言最強大的功能之一就是能夠操縱變量。變量是引用值的名稱。</span></p>
+<p><span>An <em>assignment statement</em><span><span> </span>creates new variables and gives them values:</span></span></p>
+<p><span><span>賦值語句創建新變量並為其提供值：</span></span></p>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_827705">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py plain">&gt;&gt;&gt; message </code><code class="py keyword">=</code> <code class="py string">'And now for something completely different'</code></div>
+<div class="line number2 index1 alt1"><code class="py plain">&gt;&gt;&gt; n </code><code class="py keyword">=</code> <code class="py value">17</code></div>
+<div class="line number3 index2 alt2"><code class="py plain">&gt;&gt;&gt; pi </code><code class="py keyword">=</code> <code class="py value">3.1415926535897931</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><span>This example makes three assignments. The first assigns a string to a new variable named </span><code>message</code><span>; the second assigns the integer<span> </span></span><code>17</code><span><span> </span>to<span> </span></span><code>n</code><span>; the third assigns the (approximate) value of<span> </span></span><span class="math"><em>π</em></span><span><span> </span>to<span> </span></span><code>pi</code><span>.</span><br/>本示例進行了三個分配。第一個將字符串分配給一個名為message的新變量；第二個將整數17分配給n；第三個將π的（近似）值分配給pi。<br/><span>To display the value of a variable, you can use a print statement:</span><br/>要顯示變量的值，可以使用打印語句：<br/></span></pre>
+<div>
+<div class="syntaxhighlighter py" id="highlighter_797861">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="py plain">&gt;&gt;&gt; </code><code class="py functions">print</code><code class="py plain">(n)</code></div>
+<div class="line number2 index1 alt1"><code class="py value">17</code></div>
+<div class="line number3 index2 alt2"><code class="py plain">&gt;&gt;&gt; </code><code class="py functions">print</code><code class="py plain">(pi)</code></div>
+<div class="line number4 index3 alt1"><code class="py value">3.141592653589793</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>The type of a variable is the type of the value it refers to.</p>
+<p>變量的類型是它所引用的值的類型。</p>
+<div>
+<div class="syntaxhighlighter html" id="highlighter_161499">
+<table border="0" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td class="gutter">
+<div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+</td>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="html plain">&gt;&gt;&gt; type(message)</code></div>
+<div class="line number2 index1 alt1"><code class="html plain">&lt;</code><code class="html keyword">class</code> <code class="html plain">'str'&gt;</code></div>
+<div class="line number3 index2 alt2"><code class="html plain">&gt;&gt;&gt; type(n)</code></div>
+<div class="line number4 index3 alt1"><code class="html plain">&lt;</code><code class="html keyword">class</code> <code class="html plain">'int'&gt;</code></div>
+<div class="line number5 index4 alt2"><code class="html plain">&gt;&gt;&gt; type(pi)</code></div>
+<div class="line number6 index5 alt1"><code class="html plain">&lt;</code><code class="html keyword">class</code> <code class="html plain">'float'&gt;</code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </li>
 <li lang="">
-<br />Heat Sources(熱源) << <a href='Heat Sources(熱源).html'>Previous</a> <a href='BIOS Settings(bios設置).html'>Next</a> >> BIOS Settings(bios設置)</div>
+<br />HW2 << <a href='HW2.html'>Previous</a> <a href='HTML Tutorial HTML教程.html'>Next</a> >> HTML Tutorial HTML教程</div>
         
     <!-- footer -->
       <div class="container">

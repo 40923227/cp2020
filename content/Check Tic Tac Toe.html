@@ -133,12 +133,74 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Heat Sources(熱源) << <a href='Heat Sources(熱源).html'>Previous</a> <a href='BIOS Settings(bios設置).html'>Next</a> >> BIOS Settings(bios設置)<br /><h1>heat reduction</h1>
-<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW">There are many ways to reduce the amount of heat generated in a computer,<br/>but the most notable way is the use of a heat sink, like the one pictured<br/>below in green. A heat sink works to draw heat away from the sensitive<br/>components, such as the CPU, GPU, northbridge, and southbridge, through<br/>conduction. It then uses the fins to dissipate heat across a wider surface<br/>area. A fan usually moves air over the surface to remove the heat from the<br/>heat sink and push it out the computer’s exhaust vents on the back of the<br/>system. Heat sinks are created out of aluminum alloys or copper, which are<br/>soft metals with high heat conductivity.<br/></span></p>
-<p class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr"><span lang="zh-TW"><span style="color: #99cc00;">有許多方法可以減少計算機中產生的熱量，但是最值得注意的方法是使用散熱器，如下面的綠色</span><br/><span style="color: #99cc00;">圖片所示。散熱器通過傳導將熱量從敏感組件（例如CPU，GPU，北橋和南橋）吸走。然後，它使</span><br/><span style="color: #99cc00;">用散熱片在更寬的表面積上散熱。風扇通常將空氣移動到表面上方，以從散熱器中散熱，然後將其</span><br/><span style="color: #99cc00;">從系統背面的計算機排氣孔中推出。散熱器由鋁合金或銅製成，而鋁合金或銅是具有高導熱性的軟金屬。</span><br/><img alt="Photograph of a heat sink. It is a square metal device with a round device with fins sitting on top. The round device is labeled “CPU Cooler.”" class="popimg" id="_i_0" onclick="loadImageFromPage(this);" src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH08/webcontent/PCH08/image1.png" title="Photograph of a heat sink. It is a square metal device with a round device with fins sitting on top. The round device is labeled “CPU Cooler.”"/></span></p>
-</li>
-<li lang="">
-<br />Heat Sources(熱源) << <a href='Heat Sources(熱源).html'>Previous</a> <a href='BIOS Settings(bios設置).html'>Next</a> >> BIOS Settings(bios設置)</div>
+    <div id="tipue_search_content">HW3 << <a href='HW3.html'>Previous</a> <a href='Max Of Three.html'>Next</a> >> Max Of Three<br /><h1>Check Tic Tac Toe</h1>
+<p><em>This exercise is Part 2 of 4 of the Tic Tac Toe exercise series. The other exercises are:<span> </span><a href="https://www.practicepython.org/exercise/2014/12/27/24-draw-a-game-board.html">Part 1</a>,<span> </span><a href="https://www.practicepython.org/exercise/2015/11/26/27-tic-tac-toe-draw.html">Part 3</a>, and<span> </span><a href="https://www.practicepython.org/exercise/2016/08/03/29-tic-tac-toe-game.html">Part 4</a>.</em></p>
+<p>As you may have guessed, we are trying to build up to a full tic-tac-toe board. However, this is significantly more than half an hour of coding, so we’re doing it in pieces.</p>
+<span>您可能已經猜到了，我們正在努力建立完整的井字遊戲板。但是，這遠遠超過了半個小時的編碼，因此我們要分批進行。</span>
+<p></p>
+<p></p>
+<p>Today, we will simply focus on checking whether someone has WON a game of Tic Tac Toe, not worrying about how the moves were made.</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">我們只關注檢查某人是否贏得了井字遊戲，而不用擔心這些動作是如何進行的。</span></pre>
+<p></p>
+<p>If a game of Tic Tac Toe is represented as a list of lists, like so:</p>
+<figure class="highlight">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">game = [[1, 2, 0],
+	[2, 1, 0],
+	[2, 1, 1]]</pre>
+<pre><code class="language-python" data-lang="python"><span class="p"><br/><br/></span></code></pre>
+<p style="text-align: left;">where a<span> </span><code class="highlighter-rouge">0</code><span> </span>means an empty square, a<span> </span><code class="highlighter-rouge">1</code><span> </span>means that player 1 put their token in that space, and a<span> </span><code class="highlighter-rouge">2</code><span> </span>means that player 2 put their token in that space.</p>
+<p style="text-align: left;">Your task this week: given a 3 by 3 list of lists that represents a Tic Tac Toe game board, tell me whether anyone has won, and tell me which player won, if any. A Tic Tac Toe win is 3 in a row - either in a row, a column, or a diagonal. Don’t worry about the case where TWO people have won - assume that in every board there will only be one winner.</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">給定一個代表Tic Tac Toe遊戲板的3 x 3列表，請告訴我是否有人贏了，並告訴我哪<br/>個玩家贏了（如果有）。井字遊戲的勝利是連續3個-連續，一列或對角線。不必擔心會<br/>有兩個人獲勝的情況-假設在每個董事會中只有一個獲勝者。</span></pre>
+<p style="text-align: left;">Here are some more examples to work with:</p>
+<figure class="highlight" style="text-align: left;">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">winner_is_2 = [[2, 2, 0],
+	[2, 1, 0],
+	[2, 1, 1]]
+
+winner_is_1 = [[1, 2, 0],
+	[2, 1, 0],
+	[2, 1, 1]]
+
+winner_is_also_1 = [[0, 1, 0],
+	[2, 1, 0],
+	[2, 1, 1]]
+
+no_winner = [[1, 2, 0],
+	[2, 1, 0],
+	[2, 1, 2]]
+
+also_no_winner = [[1, 2, 0],
+	[2, 1, 0],
+	[2, 1, 0]]</pre>
+<pre><br/><br/></pre>
+</figure>
+<h4 id="topics">Topics</h4>
+<p>This exercise is challenging, but doable with only lists (of lists)! Lists of lists are nearly the same as lists, just a bit trickier. Remember that to get the first element in a list called<span> </span><code class="highlighter-rouge">my_list = [5, 10, 15]</code>, you index it with a variable like so:</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">僅可使用列表中的列表！列表的列表與列表幾乎相同，只是比較棘手。請記住，要獲取<br/>名為my_list = [5，10，15]的列表中的第一個元素，請使用如下所示的變量對其進<br/>行索引：</span></pre>
+<figure class="highlight">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; print(my_list[0])
+	5
+	&gt;&gt;&gt; print(my_list[-1])
+	15
+	&gt;&gt;&gt; print(len(my_list))
+	3</pre>
+</figure>
+<p>When working with lists of lists, it is the same! Say you have a list<span> </span><code class="highlighter-rouge">matrix = [[1, 2], [3, 4]]</code>. Then, take a look at this:</p>
+<figure class="highlight">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; print(matrix[0])
+	[1, 2]
+	&gt;&gt;&gt; print(matrix[-1])
+	[3, 4]
+	&gt;&gt;&gt; first_row = matrix[0]
+	&gt;&gt;&gt; print(first_row[0])
+	1
+	&gt;&gt;&gt; print(matrix[0][0])
+	1
+	&gt;&gt;&gt; print(matrix[1][1])
+	4</pre>
+</figure>
+<p>The cool part is that you can use double-indexing to read the elements from our list of lists<span> </span><code class="highlighter-rouge">matrix</code>! By indexing<span> </span><code class="highlighter-rouge">matrix[0][1]</code><span> </span>we are saying give me the 1st element of the 0th element of<span> </span><code class="highlighter-rouge">matrix</code>, which in this case is<span> </span><code class="highlighter-rouge">2</code>.<span lang="zh-TW">最酷的部分是您可以使用雙索引從列表列表矩陣中讀取元素！通過索引矩陣[0] [1]，我們要給我矩陣第0個元素的第一個元素，在這種情況下為2。</span></p>
+<br />HW3 << <a href='HW3.html'>Previous</a> <a href='Max Of Three.html'>Next</a> >> Max Of Three</div>
         
     <!-- footer -->
       <div class="container">
