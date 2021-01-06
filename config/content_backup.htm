@@ -1,15 +1,6 @@
 <h1>About</h1>
-<p>此內容管理系統以 <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 作為 submodule 運作, 可以選定對應的版本運作, cmsimde 可以持續改版, 不會影響之前設為 submodule, 使用舊版 cmsimde 模組的內容管理相關運作.</p>
-<h4>利用 cmsimde 建立靜態網誌方法:</h4>
-<p>1. 在 github 建立倉儲, git clone 到近端</p>
-<p>2. 參考 <a href="https://github.com/mdecourse/newcms">https://github.com/mdecourse/newcms</a>, 加入除了 cmsimde 目錄外的所有內容</p>
-<p>以 git submodule add <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> cmsimde</p>
-<p>建立 cmsimde 目錄, 並從 github 取下子模組內容.</p>
-<p>3.在近端維護時, 更換目錄到倉儲中的 cmsimde, 以 python wsgi.py 啟動近端網際伺服器.</p>
-<p>動態內容編輯完成後, 以 generate_pages 轉為靜態內容, 以 git add commit 及 push 將內容推到遠端.</p>
-<p>4. 之後若要以 git clone 取下包含 submodule 的所有內容, 執行:</p>
-<p>git clone --recurse-submodules <a href="https://github.com/mdecourse/newcms.git">https://github.com/mdecourse/newcms.git</a></p>
-<p><span></span></p>
+<p></p>
+<p></p>
 <h2>Develop</h2>
 <p><a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 的開發, 可以在一個目錄中放入 cmsimde, 然後將 up_dir 中的內容放到與 cmsimde 目錄同位階的地方, 使用 command 進入 cmsimde 目錄, 執行 python wsgi.py, 就可以啟動, 以瀏覽器 https://localhost:9443 就可以連接, 以 admin 作為管理者密碼, 就可以登入維護內容.</p>
 <p>cmsimde 的開發採用 Leo Editor, 開啟 cmsimde 目錄中的 cmsimde.leo 就可以進行程式修改, 結束後, 若要保留網際內容, 只要將 cmsimde 外部的內容倒回 up_dir 目錄中即可後續對 cmsimde 遠端倉儲進行改版.</p>
@@ -141,6 +132,7 @@ PCIe版本4 2 Gbps</span></pre>
 <p style="text-align: left;"><span lang="zh-TW"><span style="color: #99cc00;">大多數現代主板和BIOS支持對主板及其組件進行溫度監控。其名稱因製造商而異，但通常稱為PC運行狀況或溫度監控。對於支持超頻的主板，您可以在BIOS中配置設置以增加或減少處理能力，從而防止產生更多的熱量。 CPU具有監視其溫度的傳感器，BIOS可以增加或減小風扇速度以控制CPU的溫度。但是請記住，通過減少功耗（並因此減少熱量），您同時也在降低CPU的性能。</span><img alt="Photograph of a BIOS screen that provides a graph of system temperature and actual temperature measurements within the CPU and memory, along with ambient temperature. It also charts fan speeds (via tachometer readings) in the CPU, memory, chassis, chipset, and PCI." class="popimg" id="_i_0" onclick="loadImageFromPage(this);" src="https://oli.cmu.edu/repository/webcontent/d826575d0a0001dc3e9f244fa018c560/PCH08/webcontent/PCH08/image2.png" title="Photograph of a BIOS screen that provides a graph of system temperature and actual temperature measurements within the CPU and memory, along with ambient temperature. It also charts fan speeds (via tachometer readings) in the CPU, memory, chassis, chipset, and PCI."/></span></p>
 <h2>HW2</h2>
 </li>
+<li lang=""><a href="https://www.kaggle.com/yuyang0402/cp2020-hw2">https://www.kaggle.com/yuyang0402/cp2020-hw2</a></li>
 <li lang="">
 <h3>變數 Variables</h3>
 </li>
@@ -401,8 +393,6 @@ PCIe版本4 2 Gbps</span></pre>
 </div>
 </div>
 </div>
-</li>
-<li lang=""><a href="https://www.kaggle.com/yuyang0402/cp2020-hw2">https://www.kaggle.com/yuyang0402/cp2020-hw2</a>
 <h2>HW3</h2>
 <h3><span>Check Tic Tac Toe</span></h3>
 <p><em>This exercise is Part 2 of 4 of the Tic Tac Toe exercise series. The other exercises are:<span> </span><a href="https://www.practicepython.org/exercise/2014/12/27/24-draw-a-game-board.html">Part 1</a>,<span> </span><a href="https://www.practicepython.org/exercise/2015/11/26/27-tic-tac-toe-draw.html">Part 3</a>, and<span> </span><a href="https://www.practicepython.org/exercise/2016/08/03/29-tic-tac-toe-game.html">Part 4</a>.</em></p>
@@ -515,6 +505,232 @@ def maxfunction(a,b,c):
             print 'Max value is :',c
             
 maxfunction(arg1,arg2,arg3)</pre>
+<h3><span>Tic Tac Toe Game</span></h3>
+<h4 id="sample-solution">Sample solution</h4>
+<p>This exercise is unique because it relies on the output of the other exercises that need to be put together to make the final solution. The goal is to get practice with functions and how they work together in larger programs.</p>
+<p><span>該練習是獨特的，因為它依賴於需要匯總以得出最終解決方案的其他練習的輸出。目的是練習功能以及它們如何在較大的程序中協同工作。</span></p>
+<p>The 3 exercises above suggest breaking your Tic Tac Toe game into (at least) 4 functions:</p>
+<ol>
+<li>A function for drawing the game board (and the location of pieces)</li>
+<li>A function for checking whether there is a winner in the game</li>
+<li>A function for adding user input into the game state</li>
+<li>A main function that calls the others and plays the game</li>
+</ol>
+<p>The way to solve this problem is to look back at all 3 solutions to the previous exercises, copy them into one file, and modify what you had before. This is a different way of coding than coding an entire program from scratch, and can often save a lot of time.</p>
+<pre class="tw-data-text tw-text-large XcVN5d tw-ta" data-placeholder="翻譯" dir="ltr" id="tw-target-text"><span lang="zh-TW">解決此問題的方法是回顧一下先前練習的所有3個解決方案，將它們複製到一個文件中，<br/>然後修改之前的內容。與從頭開始編寫整個程序相比，這是一種不同的編碼方式，通常<br/>可以節省大量時間。</span></pre>
+<p>For my solution, I decided to copy all the functions from the older exercises into one file, and work from the main game logic from<span> </span><a href="https://www.practicepython.org/exercise/2015/11/26/27-tic-tac-toe-draw.html">Part 3</a>. Part 3 almost made you write the entire game - the main loop asking users for positions and input is already there, so starting from that point and modifying will let you finish this exercise in 30 minutes!</p>
+<p>Here is what my code looks like after copying in my solutions to<span> </span><a href="https://www.practicepython.org/exercise/2014/12/27/24-draw-a-game-board.html">Part 1</a>,<span> </span><a href="https://www.practicepython.org/exercise/2015/11/16/26-check-tic-tac-toe.html">Part 2</a>, and<span> </span><a href="https://www.practicepython.org/exercise/2015/11/26/27-tic-tac-toe-draw.html">Part 3</a><span> </span>of this exercise:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def draw_line(width, edge, filling):
+	print(filling.join([edge] * (width + 1)))
+
+def draw_board(width, height):
+	draw_line(width, " ", "__")
+	for i in range(height):
+		draw_line(width, "|", "__")
+	print("\n")
+
+def display_winner(player):
+	if player == 0:
+		print("Tie")
+	else:
+		print("Player " + str(player) + " wins!")
+
+def check_row_winner(row):
+	"""
+	Return the player number that wins for that row.
+	If there is no winner, return 0.
+	"""
+	if row[0] == row[1] and row[1] == row[2]:
+		return row[0]
+	return 0
+
+def get_col(game, col_number):
+	return [game[x][col_number] for x in range(3)]
+
+def get_row(game, row_number):
+	return game[row_number]
+
+def check_winner(game):
+	game_slices = []
+	for index in range(3):
+		game_slices.append(get_row(game, index))
+		game_slices.append(get_col(game, index))
+
+	# check diagonals
+	down_diagonal = [game[x][x] for x in range(3)]
+	up_diagonal = [game[0][2], game[1][1], game[2][0]]
+	game_slices.append(down_diagonal)
+	game_slices.append(up_diagonal)
+
+	for game_slice in game_slices:
+		winner = check_row_winner(game_slice)
+		if winner != 0:
+			display_winner(winner)
+			return winner
+
+	display_winner(winner)
+	return winner
+
+def start_game():
+	return [[0, 0, 0] for x in range(3)]
+
+def display_game(game):
+	d = {2: "O", 1: "X", 0: " "}
+	game_string = []
+	for row_num in range(3):
+		new_row = []
+		for col_num in range(3):
+			new_row.append(d[game[row_num][col_num]])
+		game_string.append(new_row)
+	print(game_string)
+
+
+def add_piece(game, player, row, column):
+	"""
+	game: game state
+	player: player number
+	row: 0-index row
+	column: 0-index column
+	"""
+	game[row][column] = player
+	return game
+
+def convert_input_to_coordinate(user_input):
+	return user_input - 1
+
+def switch_player(player):
+	if player == 1:
+		return 2
+	else:
+		return 1
+
+
+if __name__ == '__main__':
+	game = start_game()
+	display_game(game)
+	player = 1
+
+	# go on forever
+	while True:
+		print("Currently player: " + str(player))
+		row = convert_input_to_coordinate(int(input("Which row? (start with 1) ")))
+		column = convert_input_to_coordinate(int(input("Which column? (start with 1) ")))
+		game = add_piece(game, player, row, column)
+		display_game(game)
+		player = switch_player(player)</pre>
+<p>After some modifications:</p>
+<ul>
+<li>to the game board drawing functions</li>
+<li>adding a function to check the availability of a square</li>
+<li>adding a function to check whether there are any moves available</li>
+<li>updating the main game loop end condition</li>
+</ul>
+<p>The final product is here:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def draw_line(width, edge, filling):
+	print(filling.join([edge] * (width + 1)))
+
+
+def display_winner(player):
+	if player == 0:
+		print("Tie")
+	else:
+		print("Player " + str(player) + " wins!")
+
+def check_row_winner(row):
+	"""
+	Return the player number that wins for that row.
+	If there is no winner, return 0.
+	"""
+	if row[0] == row[1] and row[1] == row[2]:
+		return row[0]
+	return 0
+
+def get_col(game, col_number):
+	return [game[x][col_number] for x in range(3)]
+
+def get_row(game, row_number):
+	return game[row_number]
+
+def check_winner(game):
+	game_slices = []
+	for index in range(3):
+		game_slices.append(get_row(game, index))
+		game_slices.append(get_col(game, index))
+
+	# check diagonals
+	down_diagonal = [game[x][x] for x in range(3)]
+	up_diagonal = [game[0][2], game[1][1], game[2][0]]
+	game_slices.append(down_diagonal)
+	game_slices.append(up_diagonal)
+
+	for game_slice in game_slices:
+		winner = check_row_winner(game_slice)
+		if winner != 0:
+			return winner
+
+	return winner
+
+def start_game():
+	return [[0, 0, 0] for x in range(3)]
+
+def display_game(game):
+	d = {2: "O", 1: "X", 0: "_"}
+	draw_line(3, " ", "_")
+	for row_num in range(3):
+		new_row = []
+		for col_num in range(3):
+			new_row.append(d[game[row_num][col_num]])
+		print("|" + "|".join(new_row) + "|")
+
+
+def add_piece(game, player, row, column):
+	"""
+	game: game state
+	player: player number
+	row: 0-index row
+	column: 0-index column
+	"""
+	game[row][column] = player
+	return game
+
+def check_space_empty(game, row, column):
+	return game[row][column] == 0
+
+def convert_input_to_coordinate(user_input):
+	return user_input - 1
+
+def switch_player(player):
+	if player == 1:
+		return 2
+	else:
+		return 1
+
+def moves_exist(game):
+	for row_num in range(3):
+		for col_num in range(3):
+			if game[row_num][col_num] == 0:
+				return True
+	return False
+
+if __name__ == '__main__':
+	game = start_game()
+	display_game(game)
+	player = 1
+	winner = 0  # the winner is not yet defined
+
+	# go on forever
+	while winner == 0 and moves_exist(game):
+		print("Currently player: " + str(player))
+		available = False
+		while not available:
+			row = convert_input_to_coordinate(int(input("Which row? (start with 1) ")))
+			column = convert_input_to_coordinate(int(input("Which column? (start with 1) ")))
+			available = check_space_empty(game, row, column)
+		game = add_piece(game, player, row, column)
+		display_game(game)
+		player = switch_player(player)
+		winner = check_winner(game)
+	display_winner(winner)</pre>
 <p></p>
 </figure>
 </li>
