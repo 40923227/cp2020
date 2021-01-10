@@ -1,5 +1,6 @@
 <h1>About</h1>
-<p></p>
+<p><img alt="如何降低电路板的噪声| 村田中文技术社区" src="https://lh3.googleusercontent.com/proxy/u3RWOeJxufDbwWt4cGQZYnTBGdippG8WZjlkfXcpPjEpeeVYeHzxLiXoJXZiEA3o3yhK6X3E7IjeeiJfKN08AmXmK1i1XbcIV7ZTDIVXYu0jzIiZnqlgctg32D0"/></p>
+<p>整個學期下來，看見了很多以前在高中沒見過的東西，所以在做作業時偶爾會遇到一些問題，以為靠自己就能解決問題嗎?並沒有，所以不是去找大腿抱不然就是找老師問問題，如果自己硬要解決的話，可能只會越搞越糟糕而已，所以我要在這感謝那些曾經讓我抱過的大腿，當初github倉儲連接不到cmsimde的網站時就是請他們幫忙，如果沒請人幫忙的話可能現在連HW1都不會出現。</p>
 <p></p>
 <h2>Develop</h2>
 <p><a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 的開發, 可以在一個目錄中放入 cmsimde, 然後將 up_dir 中的內容放到與 cmsimde 目錄同位階的地方, 使用 command 進入 cmsimde 目錄, 執行 python wsgi.py, 就可以啟動, 以瀏覽器 https://localhost:9443 就可以連接, 以 admin 作為管理者密碼, 就可以登入維護內容.</p>
@@ -133,6 +134,41 @@ PCIe版本4 2 Gbps</span></pre>
 <h2>HW2</h2>
 </li>
 <li lang=""><a href="https://www.kaggle.com/yuyang0402/cp2020-hw2">https://www.kaggle.com/yuyang0402/cp2020-hw2</a></li>
+<li lang="">
+<h3>作業2-1</h3>
+<span>參考40923211</span>
+
+<span>方法一 :</span><span></span></li>
+<li lang="">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import urllib.request
+#導入urllib.request
+target_url = "https://nfulist.herokuapp.com/?semester=1091&amp;courseno=0776"
+#設target_url = "網址"
+cp1b = []
+#設cp1b=數列
+for line in urllib.request.urlopen(target_url):
+#重複打開target_url的迴圈定義line
+    cp1b.append(int(line.decode('utf-8').rstrip()))
+    #把line重新編碼加進cp1b(數列)   註:rstrip()刪除字尾符號
+print(cp1b)
+</pre>
+<span><img alt="" height="264" src="https://40923211.github.io/cp2020/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202020-12-08%20153151.png" width="456"/></span><span></span></li>
+<li lang="">
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from random import shuffle #導入隨機洗牌
+list  = [40523138,40523148,40723217,40728238,40823148,40823152,40923201,40923202,40923203,40923204,40923205,
+40923206,40923207,40923208,40923209,40923210,40923211,40923212,40923213,40923214,40923216,40923217,40923218,
+40923219,40923220,40923221,40923223,40923224,40923225,40923226,40923227,40923228,40923229,40923230,40923231,
+40923232,40923233,40923234,40923235,40923236,40923237,40923238,40923239,40923240,40923241,40923242,40923243,
+40923244,40923245,40923246,40923247,40923248,40923249,40923250,40923251,40923252,40923253] 
+#列表[]
+shuffle(list) #shuffle=洗牌
+n=5
+m = int(len(list)/n) 
+list2 = [] 
+for i in range(0, len(list), m): #range()是一个函数， for i in range () 就是给i赋值： 
+    list2.append(list[i:i+m]) 
+print(list2) </pre>
+<span><br/></span></li>
 <li lang="">
 <h3>變數 Variables</h3>
 </li>
